@@ -1,15 +1,9 @@
 # tradeexchanges
 
-To install dependencies:
+Trade Exchange Interface and Abstract Classes/Functions
+ * interface for implementing exchanges on (a?) trading bot
 
-```bash
-bun install
-```
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.21. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Depedencies:
+ * TradeOrders - order handler interfaces and abstract
+ * TradeCandlesFetchers(non-existing) - candle fetching interfaces and abstract
