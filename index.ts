@@ -24,5 +24,5 @@ export interface AssetWallet {
   /**
    * Fetches all the holdings, name and value from the platform
    */
-  fetchHoldings(): AssetHolding[];
+  fetchHoldings(): Promise<AssetHolding[]>;
 }
