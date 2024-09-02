@@ -6,10 +6,9 @@
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.0.0"
   },
   "dependencies": {
-    "add_logger": "^0.0.23",
-    "tradeOrders": "https://github.com/albertdiones/tradeOrders.git"
+    "add_logger": "^0.0.23"
   }
 }
