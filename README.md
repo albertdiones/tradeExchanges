@@ -5,5 +5,6 @@ Trade Exchange Interface and Abstract Classes/Functions
 
 
 Depedencies:
- * TradeOrders - order handler interfaces and abstract
- * TradeCandlesFetchers(non-existing) - candle fetching interfaces and abstract
+ [x] TradeOrders - order handler interfaces and abstract
+ [x] Ticker fetcher
+  * TradeCandlesFetchers(non-existing) - candle fetching interfaces and abstract
