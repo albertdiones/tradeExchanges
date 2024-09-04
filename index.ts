@@ -8,8 +8,16 @@ export interface Exchange extends AssetWallet,  OrderHandler {
   _candleCountFromCloseTimestamp(timestamp: number, minutes: number): number; // todo: figure out if to move or remove this
 }
 
-export interface AssetHolding {
+export interface Asset {
   name: string;
+  usd_price: number;
+  circulating_supply: number;
+  tags?: string[];
+  market_cap: number; // in dollars
+}
+
+export interface AssetHolding {
+  asset: Asset;
   amount: number;
 }
 
