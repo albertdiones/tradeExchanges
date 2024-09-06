@@ -1,9 +1,20 @@
 import { latestFirst, oldestFirst } from "./sorters";
 
-export interface rawExchangeCandle extends BasicCandle {
+export type TickerCandle = Candle<HasVolumeData>;
+
+// fallback @deprecated use TickerCandle
+export type rawExchangeCandle = TickerCandle;
+
+export interface HasVolumeData {
     base_volume: number; // volume on the coin
     quote_volume: number; // e.g. usdt or btc
-    trades?: number; // int # trades
+}
+
+export interface HasTradeCount {
+    trades: number; // int # trades
+}
+
+export interface HasBuyerTakerData {
     buyer_base_volume?: number;
     buyer_quote_volume?: number;
 }
@@ -14,6 +25,23 @@ export interface rawIndexCandle extends BasicCandle {
     type: string
 }
 
+export interface EmaIndicator {
+    ema?: { [key: number]: number }
+}
+
+export interface RsiIndicator {
+    rsi: number;
+}
+
+export interface Candle<indicators = {}> extends BasicCandle {
+    indicators: indicators;
+}
+
+export type CandleWithEma = Candle<EmaIndicator>;
+
+//
+//export type CandleWithIndicators = Candle<EmaIndicator & RsiIndicator>
+
 export interface BasicCandle {
     open: number;
     high: number;
@@ -21,7 +49,6 @@ export interface BasicCandle {
     close: number;
     open_timestamp: number;
     close_timestamp: number;
-    ema?: { [key: number]: number }
 }
 
 // ticker data for today
