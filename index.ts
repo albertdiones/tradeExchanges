@@ -3,7 +3,7 @@ import {Logger} from "add_logger"
 import type {BasicCandle, rawExchangeCandle, TickerCandle, TickerData } from "./tradingCandles";
 import {type OrderHandler} from "tradeOrders/orderHandler";
 
-export interface Exchange extends CandleFetcher, AssetWallet,  OrderHandler {
+export interface Exchange extends TickerFetcher, CandleFetcher, AssetWallet,  OrderHandler {
 }
 
 export interface AssetHolding {
