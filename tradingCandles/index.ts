@@ -1,6 +1,6 @@
 import { latestFirst, oldestFirst } from "./sorters";
 
-export type TickerCandle = Candle<HasVolumeData>;
+export type TickerCandle = BasicCandle & HasVolumeData;
 
 // fallback @deprecated use TickerCandle
 export type rawExchangeCandle = TickerCandle;
