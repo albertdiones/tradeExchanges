@@ -40,7 +40,7 @@ export interface Candle<indicators = {}> extends BasicCandle {
 export type CandleWithEma = Candle<EmaIndicator>;
 
 //
-//export type CandleWithIndicators = Candle<EmaIndicator & RsiIndicator>
+//export type CandleWithIndicators = BasicCandle & EmaIndicator & RsiIndicator
 
 export interface BasicCandle {
     open: number;
