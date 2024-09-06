@@ -1,11 +1,9 @@
 import XhrJson from "./xhrjson";
 import {Logger} from "add_logger"
-import type {rawExchangeCandle, TickerData } from "./tradingCandles";
+import type {BasicCandle, rawExchangeCandle, TickerCandle, TickerData } from "./tradingCandles";
 import {type OrderHandler} from "tradeOrders/orderHandler";
 
-export interface Exchange extends AssetWallet,  OrderHandler {
-  fetchCandlesFromExchange(symbol: string, minutes: number, limit: number): Promise<rawExchangeCandle[] | null>;
-  _candleCountFromCloseTimestamp(timestamp: number, minutes: number): number; // todo: figure out if to move or remove this
+export interface Exchange extends CandleFetcher, AssetWallet,  OrderHandler {
 }
 
 export interface AssetHolding {
@@ -42,4 +40,8 @@ export interface TickerFetcher {
    * @param baseAsset 
    */
   getAssetDefaultTickerSymbol(baseAsset: string): string | null;
+}
+
+export interface CandleFetcher {
+  fetchCandles(symbol: string, minutes: number, limit: number): Promise<TickerCandle[] | null>;
 }
