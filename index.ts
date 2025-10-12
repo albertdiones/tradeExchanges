@@ -45,3 +45,7 @@ export interface TickerFetcher {
 export interface CandleFetcher {
   fetchCandles(symbol: string, minutes: number, limit: number): Promise<TickerCandle[] | null>;
 }
+
+export interface AbortableCandleFetcher extends CandleFetcher {
+  abortFullFetchQueue(): Promise<void>;
+}
